@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="yachtzeeEindopdracht.css" />
+    <title>Yahtzee The Game</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="/images/download.jpg"
+          class="logo-img"
+          alt="afbeelding van een dobbelsteen"
+        />
+      </div>
+      <div>
+        <button type="button" class="button" id="roll-btn" onclick="rollDice()">
+          Roll Dice
+        </button>
+        <button
+          type="button"
+          class="button"
+          id="roll-btn"
+          onclick="resetDice()"
+        >
+          Reset Dice
+        </button>
+      </div>
+    </header>
+    <div class="H1">
+      <h1>Yahtzee The Game</h1>
+    </div>
+    <p id="dice-value"></p>
+
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th scope="row">Player</th>
+          <th scope="row">Ones</th>
+          <th scope="row">Twos</th>
+          <th scope="row">Threes</th>
+          <th scope="row">Fours</th>
+          <th scope="row">Fives</th>
+          <th scope="row">Sixes</th>
+          <th scope="row">Bonus</th>
+          <th scope="row">Subtotal</th>
+          <th scope="row">Three of a Kind</th>
+          <th scope="row">Four of a Kind</th>
+          <th scope="row">Full House</th>
+          <th scope="row">Small Straight</th>
+          <th scope="row">Large Straight</th>
+          <th scope="row">Yahtzee</th>
+          <th scope="row">Chance</th>
+          <th score="row">second section</th>
+          <th scope="row">Total Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ondersterij">
+          <td class="Player1Table">Dobbelsteen waarde</td>
+          <td id="player1dsones" onclick="cellsin('player1dsones')"></td>
+          <td id="player1dstwos" onclick="cellsin('player1dstwos')"></td>
+          <td id="player1dsthrees" onclick="cellsin('player1dsthrees')"></td>
+          <td id="player1dsfours" onclick="cellsin('player1dsfours')"></td>
+          <td id="player1dsfives" onclick="cellsin('player1dsfives')"></td>
+          <td id="player1dssixes" onclick="cellsin('player1dssixes')"></td>
+          <td id="player1dsbonus" onclick="cellsin('player1dsbonus')"></td>
+          <td id="player1dssubtotal" onclick="cellsin('player1dssubtotal')"></td>
+          <td id="player1dsthreeofakind" onclick="cellsin('player1dsthreeofakind')"></td>
+          <td id="player1dsfourofakind" onclick="cellsin('player1dsfourofakind')"></td>
+          <td id="player1dsfullhouse" onclick="cellsin('player1dsfullhouse')"></td>
+          <td id="player1dssmallstraight" onclick="cellsin('player1dssmallstraight')"></td>
+          <td id="player1dslargestraight" onclick="cellsin('player1dslargestraight')"></td>
+          <td id="player1dsyahtzee" onclick="cellsin('player1dsyahtzee')"></td>
+          <td id="player1dschance" onclick="cellsin('player1dschance')"></td>
+          <td id="player1dssecondsection" onclick="cellsin('player1dssecondsection')"></td>
+          <td id="player1dstotal" onclick="cellsin('player1dstotal')"></td>
+        </tr>
+        <tr class="ondersterij">
+          <td class="Player1Table" id="player-name"></td>
+          <td id="player1-player1dsones" onclick="cellsin('player1-ones')"></td>
+          <td id="player1-player1dstwos" onclick="cellsin('player1-twos')"></td>
+          <td id="player1-player1dsthrees" onclick="cellsin('player1-threes')"></td>
+          <td id="player1-player1dsfours" onclick="cellsin('player1-fours')"></td>
+          <td id="player1-player1dsfives" onclick="cellsin('player1-fives')"></td>
+          <td id="player1-player1dssixes"onclick="cellsin('player1-sixes')"></td>
+          <td id="player1-player1dsbonus" onclick="cellsin('player1-bonus')"></td>
+          <td id="player1-player1dssubtotal" onclick="cellsin('player1-subtotal')"></td>
+          <td id="player1-player1dsthreeofakind" onclick="cellsin('player1-three-of-a-kind')"></td>
+          <td id="player1-player1dsfourofakind" onclick="cellsin('player1-four-of-a-kind')"></td>
+          <td id="player1-player1dsfullhouse" onclick="cellsin('player1-full-house')"</td>
+          <td id="player1-player1dssmallstraight"onclick="cellsin('player1-small-straight')"></td>
+          <td id="player1-player1dslargestraight"onclick="cellsin('player1-large-straight')"></td>
+          <td id="player1-player1dsyahtzee" onclick="cellsin('player1-yahtzee')" ></td>
+          <td id="player1-player1dschance" onclick="cellsin('player1-chance')"></td>
+          <td id="player1-player1dssecondsection" onclick="cellsin('player1-secondsection')"></td>
+          <td id="player1-player1dstotal" onclick="cellsin('player1-total')"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="dice-container">
+      <button type="button" class="dice" id="dice1" onclick="holdDice(0)">1</button>
+      <button type="button" class="dice" id="dice2" onclick="holdDice(1)">2</button>
+      <button type="button" class="dice" id="dice3" onclick="holdDice(2)">3</button>
+      <button type="button" class="dice" id="dice4" onclick="holdDice(3)">4</button>
+      <button type="button" class="dice" id="dice5" onclick="holdDice(4)">5</button>
+    </div>
+
+    <div>
+      <button
+        type="button"
+        class="volgendeRondeKnop"
+        id="volgende-ronde-btn"
+        onclick="volgendeRonde()"
+      >
+        Volgende 3 worpen
+      </button>
+    </div>
+
+    <div>
+      <p id="roll-count-info">Aantal worpen:<span id="roll-count">3</span></p>
+    </div>
+    <div id="scoresheet"></div>
+
+    <script src="yahtzee/YahtzeeEindopdracht nieuwe versie 28-02-2024.js"></script>
+  </body>
+</html>
